@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/dataTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="viewEnd"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/result_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/result_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="28sp"
+        android:textAlignment="viewEnd"
+        app:layout_constraintBottom_toTopOf="@id/constraint"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/LineColor"
+        app:layout_constraintBottom_toBottomOf="@id/result_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/constraint2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_module"
+                style="@style/digitbutton"
+                android:gravity="center"
+                android:onClick="operatorbutton"
+                app:icon="@drawable/baseline_backspace_24"
+                app:iconTint="#FF9800"
+                app:layout_constraintEnd_toStartOf="@+id/btn2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn2"
+                style="@style/operatorbutton"
+                android:onClick="onClearClick"
+                android:text="c"
+                android:textColor="#FF9800"
+                app:layout_constraintEnd_toStartOf="@+id/btn_back"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_back"
+                style="@style/digitbutton"
+                android:onClick="onBackClick"
+                app:icon="@drawable/baseline_percent_24"
+                app:iconTint="#FF9800"
+                app:layout_constraintEnd_toStartOf="@+id/btn_divided"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_divided"
+                style="@style/digitbutton"
+                android:onClick="operatorbutton"
+                android:text="÷"
+                android:textColor="#FF9800"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/constraint3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_7"
+                style="@style/digitbutton"
+                android:onClick="onDigitClick"
+                android:text="7"
+                app:layout_constraintEnd_toStartOf="@+id/btn_8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_8"
+                style="@style/digitbutton"
+                android:onClick="onDigitClick"
+                android:text="8"
+                app:layout_constraintEnd_toStartOf="@+id/btn_9"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_9"
+                style="@style/digitbutton"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:onClick="onDigitClick"
+                android:text="9"
+                app:layout_constraintEnd_toStartOf="@+id/btn_multiple"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_multiple"
+                style="@style/digitbutton"
+                android:onClick="onDigitClick"
+                android:text="⨯"
+                android:textColor="#FF9800"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/constraint4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_4"
+                style="@style/digitbutton"
+                android:onClick="onDigitClick"
+                android:text="4"
+                app:layout_constraintEnd_toStartOf="@+id/btn_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_5"
+                style="@style/digitbutton"
+                android:onClick="onDigitClick"
+                android:text="5"
+                app:layout_constraintEnd_toStartOf="@+id/btn_6"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_6"
+                style="@style/digitbutton"
+                android:onClick="onDigitClick"
+                android:text="6"
+                app:layout_constraintEnd_toStartOf="@+id/btn_subtract"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_subtract"
+                style="@style/digitbutton"
+                android:onClick="operatorbutton"
+                android:text="-"
+                android:textColor="#FF9800"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/constraint5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_1"
+                style="@style/digitbutton"
+                android:onClick="onDigitClick"
+                android:text="1"
+                app:layout_constraintEnd_toStartOf="@+id/btn_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_2"
+                style="@style/digitbutton"
+                android:onClick="onDigitClick"
+                android:text="2"
+                app:layout_constraintEnd_toStartOf="@+id/btn_3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_3"
+                style="@style/digitbutton"
+                android:onClick="onDigitClick"
+                android:text="3"
+                app:layout_constraintEnd_toStartOf="@+id/btn_add"
+
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add"
+                style="@style/digitbutton"
+                android:onClick="onDigitClick"
+                android:text="+"
+                android:textColor="#FF9800"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn17"
+                style="@style/digitbutton"
+                android:onClick="operatorbutton"
+                android:text="+/-"
+                android:textColor="#FF9800"
+                app:layout_constraintEnd_toStartOf="@+id/btn18"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn18"
+                style="@style/digitbutton"
+                android:onClick="operatorbutton"
+                android:text="0"
+                android:textColor="#FF9800"
+                app:layout_constraintEnd_toStartOf="@+id/btn19"
+
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn19"
+                style="@style/digitbutton"
+                android:onClick="operatorbutton"
+                android:text="."
+                android:textColor="#FF9800"
+                app:layout_constraintEnd_toStartOf="@+id/btn_equal"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_equal"
+                style="@style/operatorbutton"
+                android:backgroundTint="#FF9800"
+                android:onClick="onEqualClick"
+                android:text="="
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
