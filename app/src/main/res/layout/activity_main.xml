@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text=""
         android:textAlignment="viewEnd"
-        android:textSize="36sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/result_textView"
         app:layout_constraintEnd_toEndOf="parent"
